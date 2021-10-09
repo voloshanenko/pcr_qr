@@ -5,5 +5,4 @@ __pycache__/
 .DS_Store
 .ropeproject
 release
-conf
 src
