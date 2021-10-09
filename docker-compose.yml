@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+
+  web:
+    image: docker.voloshanenko.com/pcrqr
+    working_dir: /usr/share/nginx/html
+    restart: unless-stopped
+    environment:
+    - VIRTUAL_HOST=${VIRTUAL_HOST}
+    - VIRTUAL_PORT=${VIRTUAL_PORT}
+    - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
+    - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200m"
+        max-file: "5"
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external:
+      name: webproxy
