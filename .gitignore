@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*/*.swp
+*.swp
+.DS_Store
+.ropeproject
+release
+conf
+src
