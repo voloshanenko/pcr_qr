@@ -4,4 +4,4 @@ source env.prod
 docker build -t pcrqr .
 docker tag pcrqr ${DOCKER_REGISTRY}/pcrqr:latest
 docker push ${DOCKER_REGISTRY}/pcrqr:latest
-python deploy/deploy.py
+python3 deploy/deploy.py
